@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1329790734919926}
+  m_IsPrefabParent: 1
+--- !u!1 &1329790734919926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4063702604695972}
+  - component: {fileID: 114849531324602960}
+  - component: {fileID: 114645324719690364}
+  - component: {fileID: 114975445238054496}
+  - component: {fileID: 114087560937502856}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4063702604695972
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1329790734919926}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114087560937502856
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1329790734919926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f540531a421dd45a473f82511534db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardListing: {fileID: 0}
+--- !u!114 &114645324719690364
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1329790734919926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 632682ab78b6f75418d8e1544a982e89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardList: []
+  scriptableInfo: []
+  cardArray:
+  - {fileID: 1289483585770528, guid: 32304edd9fd5cee45be98caf930ef9b3, type: 2}
+  - {fileID: 1289483585770528, guid: 32304edd9fd5cee45be98caf930ef9b3, type: 2}
+  - {fileID: 1289483585770528, guid: 32304edd9fd5cee45be98caf930ef9b3, type: 2}
+  - {fileID: 1289483585770528, guid: 32304edd9fd5cee45be98caf930ef9b3, type: 2}
+  - {fileID: 1289483585770528, guid: 32304edd9fd5cee45be98caf930ef9b3, type: 2}
+  - {fileID: 1368875003337076, guid: 98f08ead287867f4a87d7efbb5d1509c, type: 2}
+  - {fileID: 1368875003337076, guid: 98f08ead287867f4a87d7efbb5d1509c, type: 2}
+  - {fileID: 1638713496742082, guid: 96f52c534d34f0b42b8542c76d7224bf, type: 2}
+  - {fileID: 1638713496742082, guid: 96f52c534d34f0b42b8542c76d7224bf, type: 2}
+  - {fileID: 1764191474159612, guid: 88ebd2845ea2ed24abe28cf67314d913, type: 2}
+  - {fileID: 1764191474159612, guid: 88ebd2845ea2ed24abe28cf67314d913, type: 2}
+  - {fileID: 1303320698080528, guid: 86d7c273d505ee945b635de4a41fb717, type: 2}
+  - {fileID: 1303320698080528, guid: 86d7c273d505ee945b635de4a41fb717, type: 2}
+  - {fileID: 1942414733449180, guid: 29407f7b36af5a446b21eff72bc49dce, type: 2}
+  - {fileID: 1403795581950342, guid: 727a4906ed9503240a23b22247a1d5d8, type: 2}
+  - {fileID: 1397884487154332, guid: 9a25972d1f41c9447818cc38220ccb27, type: 2}
+  scriptableArray:
+  - {fileID: 11400000, guid: 096242765b33c044dbdb9906db622564, type: 2}
+  - {fileID: 11400000, guid: 096242765b33c044dbdb9906db622564, type: 2}
+  - {fileID: 11400000, guid: 096242765b33c044dbdb9906db622564, type: 2}
+  - {fileID: 11400000, guid: 096242765b33c044dbdb9906db622564, type: 2}
+  - {fileID: 11400000, guid: 096242765b33c044dbdb9906db622564, type: 2}
+  - {fileID: 11400000, guid: 75d2ec46e73b1334e9684960a3e72810, type: 2}
+  - {fileID: 11400000, guid: 75d2ec46e73b1334e9684960a3e72810, type: 2}
+  - {fileID: 11400000, guid: 874c712e72944ee4faa0c6a931967446, type: 2}
+  - {fileID: 11400000, guid: 874c712e72944ee4faa0c6a931967446, type: 2}
+  - {fileID: 11400000, guid: e06e832111c829145a9dbb5208155ba0, type: 2}
+  - {fileID: 11400000, guid: e06e832111c829145a9dbb5208155ba0, type: 2}
+  - {fileID: 11400000, guid: 3d0d5466928db3346b227107fcf082c3, type: 2}
+  - {fileID: 11400000, guid: 3d0d5466928db3346b227107fcf082c3, type: 2}
+  - {fileID: 11400000, guid: 8c5d95c9ed60cf14a86fceaef35cb9bb, type: 2}
+  - {fileID: 11400000, guid: 8bdff45ecd97dc64eb22ee4ff7d6f121, type: 2}
+  - {fileID: 11400000, guid: aa29eec83dc699e439a2a8aa9e0649a9, type: 2}
+  offHandCard: {fileID: 0}
+--- !u!114 &114849531324602960
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1329790734919926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0195e2cd06d5349b7ba431c34812c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerArray:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  cardListing: {fileID: 0}
+  playersInGame:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  getCard: {fileID: 0}
+  endGameText: {fileID: 0}
+  round: 0
+  playerTurnNumber: 0
+  firstRandomCard: {fileID: 0}
+  secondRandomCard: {fileID: 0}
+  firstCardInfo: {fileID: 0}
+  secondCardInfo: {fileID: 0}
+--- !u!114 &114975445238054496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1329790734919926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c40e2fbaff673fe45b3b336a2b4a2630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
