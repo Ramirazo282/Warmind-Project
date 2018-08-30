@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Name: Admiral
   m_EditorClassIdentifier: 
   powerLevel: 6
+  parameterType: 1
   Name: Admiral
   description: Trades hands with another player of your choice
+  hasBeenThrown: 0
   artwork: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  gamemanager: {fileID: 0}

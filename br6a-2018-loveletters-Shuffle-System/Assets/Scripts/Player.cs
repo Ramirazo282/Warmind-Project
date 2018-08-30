@@ -7,11 +7,10 @@ public class Player : MonoBehaviour {
     public Transform[] cardsWaypoints;
 
     // public GameObject firstCard, secondCard;
-    public Card first, second;
     public List<Card> infoOnHand;
     public List<GameObject> cardsOnHand;
 
-    Gamemanager gamemanager;
+    protected Gamemanager gamemanager;
     CardDisplay display;
     PlayerSelection playerSelection;
     ColorChange colorChange;
@@ -78,7 +77,6 @@ public class Player : MonoBehaviour {
             Debug.Log("You have thrown " + goCard.name);
             gamemanager.cardHistory.Add(goCard);
             RemoveCard(i);
-            isPlayersTurn = false;
             gamemanager.PassTurn();
 
             /*

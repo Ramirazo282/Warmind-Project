@@ -12,6 +12,7 @@ public class Card : ScriptableObject {
 	public string Name;
 	public string description;
 
+    public bool hasBeenThrown;
   
     public Sprite artwork;
 

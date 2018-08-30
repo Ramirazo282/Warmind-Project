@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Name: BountyHunter
   m_EditorClassIdentifier: 
   powerLevel: 3
+  parameterType: 1
   Name: Bounty Hunter
   description: You and another player compare hands. The player with the lower hand
     is out of the round
+  hasBeenThrown: 0
   artwork: {fileID: 0}
+  gamemanager: {fileID: 0}

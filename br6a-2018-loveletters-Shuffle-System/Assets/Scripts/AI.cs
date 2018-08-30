@@ -116,34 +116,36 @@ public class AI : Player
                 { 
                     //Tengo fichado a alguien? Si es asi matalo
                     bool HasSomeoneSpotted = false;
+                    bool end = false;
                     for(int i = 0; i < PlayersCanHave.Length; i++)
                     {
                         if(CanKill(PlayersCanHave[i]))
                         {
                             Kill(PlayersCanHave[i]);
                             HasSomeoneSpotted = true;
+                            end = true;
                             break;
                         }
                     }
-                    if(!HasSomeoneSpotted)
+                    if (!end)
                     {
+
+
                         //Puedo Spottear a alguien?             
-                        if(infoOnHand[0].powerLevel == 2)
+                        if (infoOnHand[0].powerLevel == 2)
                         {
                             //Tirar Clero [0]
                             Player Target = LeastKnowledge();
                             infoOnHand[0].Ability(Target, this);
                         }
-                        else if(infoOnHand [1].powerLevel == 2)
+                        else if (infoOnHand[1].powerLevel == 2)
                         {
                             //Tirar Clero [1]
                             Player Target = LeastKnowledge();
                             infoOnHand[1].Ability(Target, this);
                         }
-                    }
-                    else
-                    {
-                        if(infoOnHand[0].powerLevel == 8 || infoOnHand[1].powerLevel == 8)
+
+                        if (infoOnHand[0].powerLevel == 8 || infoOnHand[1].powerLevel == 8)
                         {
                             //Tirar la que no es la princesa, si es guardia o baron definir target con la funcion, si es principe, rey o clero es el menor conocimiento
                             if (infoOnHand[0].powerLevel == 1 || infoOnHand[1].powerLevel == 1)
@@ -167,23 +169,23 @@ public class AI : Player
                             }
                         }
                         else
-                        {  
+                        {
                             bool FinalizoTurno = false;
                             //Ver si combiene matar con Baron
-                            if(infoOnHand[0].powerLevel == 3 || infoOnHand[1].powerLevel == 3)
+                            if (infoOnHand[0].powerLevel == 3 || infoOnHand[1].powerLevel == 3)
                             {
-                                if(MayKillBountyHunter())
+                                if (MayKillBountyHunter())
                                 {
                                     BountyHunter();
                                     FinalizoTurno = true;
                                 }
                             }
-                            if(!FinalizoTurno)
+                            if (!FinalizoTurno)
                             {
-                                if(infoOnHand[0].powerLevel == 4 || infoOnHand[1].powerLevel == 4)
+                                if (infoOnHand[0].powerLevel == 4 || infoOnHand[1].powerLevel == 4)
                                 {
                                     //Tirar el 4
-                                    if(infoOnHand[0].powerLevel == 4)
+                                    if (infoOnHand[0].powerLevel == 4)
                                     {
                                         infoOnHand[0].Ability(this);
                                     }
@@ -193,19 +195,19 @@ public class AI : Player
                                     }
                                     FinalizoTurno = true;
                                 }
-                                else if(infoOnHand[0].powerLevel == 5 || infoOnHand[1].powerLevel == 5)
+                                else if (infoOnHand[0].powerLevel == 5 || infoOnHand[1].powerLevel == 5)
                                 {
-                                    if(infoOnHand[0].powerLevel == 5 && infoOnHand[1].powerLevel == 5)
+                                    if (infoOnHand[0].powerLevel == 5 && infoOnHand[1].powerLevel == 5)
                                     {
                                         //Tirar [1] y elegir al target con menos conocimiento (Mas posibles cartas)
                                         Player Target = LeastKnowledge();
                                         infoOnHand[1].Ability(Target);
-                                        
+
                                     }
-                                    else if(infoOnHand[0].powerLevel == 6 || infoOnHand[1].powerLevel == 6)
+                                    else if (infoOnHand[0].powerLevel == 6 || infoOnHand[1].powerLevel == 6)
                                     {
                                         //Tirar el pricipe y autodescartarse
-                                        if(infoOnHand[0].powerLevel == 5)
+                                        if (infoOnHand[0].powerLevel == 5)
                                         {
                                             infoOnHand[0].Ability(this);
                                         }
@@ -214,10 +216,10 @@ public class AI : Player
                                             infoOnHand[1].Ability(this);
                                         }
                                     }
-                                    else if(infoOnHand[0].powerLevel == 7 || infoOnHand[1].powerLevel == 7)
+                                    else if (infoOnHand[0].powerLevel == 7 || infoOnHand[1].powerLevel == 7)
                                     {
                                         //Tirar 7
-                                        if(infoOnHand[0].powerLevel == 7)
+                                        if (infoOnHand[0].powerLevel == 7)
                                         {
                                             infoOnHand[0].Ability();
                                         }
@@ -226,11 +228,11 @@ public class AI : Player
                                             infoOnHand[1].Ability();
                                         }
                                     }
-                                    else if(infoOnHand[0].powerLevel == 8 || infoOnHand[1].powerLevel == 8)
+                                    else if (infoOnHand[0].powerLevel == 8 || infoOnHand[1].powerLevel == 8)
                                     {
                                         //Tirar 5 y elegir al target con menos conocimiento (Mas posibles cartas)
                                         Player Target = LeastKnowledge();
-                                        if(infoOnHand[0].powerLevel == 5)
+                                        if (infoOnHand[0].powerLevel == 5)
                                         {
                                             infoOnHand[0].Ability(Target);
                                         }
@@ -240,12 +242,12 @@ public class AI : Player
                                         }
                                     }
                                 }
-                                else if(infoOnHand[0].powerLevel == 6 || infoOnHand[1].powerLevel == 6)
+                                else if (infoOnHand[0].powerLevel == 6 || infoOnHand[1].powerLevel == 6)
                                 {
-                                    if(infoOnHand[0].powerLevel == 7 || infoOnHand[1].powerLevel == 7)
+                                    if (infoOnHand[0].powerLevel == 7 || infoOnHand[1].powerLevel == 7)
                                     {
                                         //Tirar 7
-                                        if(infoOnHand[0].powerLevel == 7)
+                                        if (infoOnHand[0].powerLevel == 7)
                                         {
                                             infoOnHand[0].Ability();
                                         }
@@ -254,10 +256,10 @@ public class AI : Player
                                             infoOnHand[1].Ability();
                                         }
                                     }
-                                    else if(infoOnHand[0].powerLevel == 8 || infoOnHand[1].powerLevel == 8)
+                                    else if (infoOnHand[0].powerLevel == 8 || infoOnHand[1].powerLevel == 8)
                                     {
                                         //Tirar 6
-                                        if(infoOnHand[0].powerLevel == 6)
+                                        if (infoOnHand[0].powerLevel == 6)
                                         {
                                             ThrowRandomCard(infoOnHand[0]);
                                         }
@@ -265,10 +267,10 @@ public class AI : Player
                                         {
                                             ThrowRandomCard(infoOnHand[1]);
                                         }
-                                        
+
                                     }
                                 }
-                                else if(infoOnHand[0].powerLevel == 7 || infoOnHand[1].powerLevel == 7)
+                                else if (infoOnHand[0].powerLevel == 7 || infoOnHand[1].powerLevel == 7)
                                 {
                                     //Random para ver si tirar 7 o la otra
                                     int randomindex = Random.Range(0, 1);
@@ -278,12 +280,13 @@ public class AI : Player
                                 {
                                     Guard();
                                 }
+                            }
                         }
                     }
-                }
             }
         }
         }
+        RemoveCheck();
     }
     Card GetLocalLowCard()
     {
@@ -296,8 +299,6 @@ public class AI : Player
     {
         if(infoOnHand[0].powerLevel == 1 || infoOnHand[1].powerLevel == 1)
         {
-            if(Target.posibleCards == 1 && !Target.cardNumber[0])
-            {
                 for(int i = 1; i < Target.cardNumber.Length; i++)
                 {
                     if(Target.cardNumber[i])
@@ -313,7 +314,6 @@ public class AI : Player
                         }
                     }
                 }
-            }
         }
         else if(infoOnHand[0].powerLevel == 3 || infoOnHand[1].powerLevel == 3)
         {
@@ -977,6 +977,9 @@ public class AI : Player
                     playerIndex = Random.Range(0, PlayersCanHave.Length);
                 C.Ability(PlayersCanHave[playerIndex].Player, this, PlayersCanHave);
                 break;
+            case 4:         //No arguments
+                C.Ability();
+                break;
         }
     }
     Player LeastKnowledge()
@@ -992,6 +995,51 @@ public class AI : Player
         return PlayersCanHave[MinPlayer].Player;
     }
 
+
+
+    void RemoveCheck()
+    {
+        Debug.Log("Entering Remove Check");
+        if (infoOnHand[0].hasBeenThrown)
+        {
+            cardsOnHand.RemoveAt(0);
+            infoOnHand.RemoveAt(0);
+        }
+        else if (infoOnHand[1].hasBeenThrown)
+        {
+            cardsOnHand.RemoveAt(1);
+            infoOnHand.RemoveAt(1);
+        }
+        else
+        {
+            if(!MustThrowCondesa())
+            {
+                ThrowRandomCard(infoOnHand[Random.Range(0,1)]);
+            }
+            else
+            {
+                if (infoOnHand[0].powerLevel == 7)
+                {
+                    ThrowRandomCard(infoOnHand[0]);
+                }
+                else
+                {
+                    ThrowRandomCard(infoOnHand[1]);
+                }
+            }
+            if (infoOnHand[0].hasBeenThrown)
+            {
+                cardsOnHand.RemoveAt(0);
+                infoOnHand.RemoveAt(0);
+            }
+            else if (infoOnHand[1].hasBeenThrown)
+            {
+                cardsOnHand.RemoveAt(1);
+                infoOnHand.RemoveAt(1);
+            }
+            gamemanager.PassTurn();
+        }
+    }
 
 
 }

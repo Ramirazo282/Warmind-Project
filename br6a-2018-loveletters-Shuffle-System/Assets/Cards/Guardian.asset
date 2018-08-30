@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Name: Guardian
   m_EditorClassIdentifier: 
   powerLevel: 1
+  parameterType: 2
   Name: Guardian
   description: Choose another player and name a card. If that player has that card
     he's out of the round
+  hasBeenThrown: 0
   artwork: {fileID: 21300000, guid: d305c0adcc318a54f8e510ee57e2c9e1, type: 3}
+  gamemanager: {fileID: 0}

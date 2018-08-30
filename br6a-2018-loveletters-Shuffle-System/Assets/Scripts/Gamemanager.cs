@@ -32,40 +32,40 @@ public class Gamemanager : MonoBehaviour {
         for (int i = 0; i < playersInGame.Length; i++)
         {
             cardListing.GetCard(i);
+
         }
     }
     void Update()
     {
         playersInGame[playerTurnNumber].isPlayersTurn = true;
+
         if (!playersInGame[playerTurnNumber].hasSecondCard)
         {
             cardListing.GetCard(playerTurnNumber);
-        }
-        CheckDeath();
-
-        if (Input.GetKeyDown(KeyCode.G) && !playersInGame[playerTurnNumber].hasSecondCard)
-        {
-            
-            if(playersInGame[playerTurnNumber] is AI)
+            if (playersInGame[playerTurnNumber] is AI)
             {
+                Debug.Log("Player nro: " + playerTurnNumber + " entered turn.");
                 playersInGame[playerTurnNumber].Turn();
             }
         }
+        CheckDeath();
     }
 
     public void PassTurn()
     {
+        Debug.Log("Es el turno del jugador: " + playerTurnNumber);
+        playersInGame[playerTurnNumber].isPlayersTurn = false;
         playerTurnNumber++;
         turnCouter++;
 
-        if (playerTurnNumber >= 3)
+        if (playerTurnNumber > 3)
             playerTurnNumber = 0;
 
         if (turnCouter >= 4)
             PassRound();
 
         if (playersInGame[playerTurnNumber].isDead)
-            playerTurnNumber++;
+            PassTurn();
     }
     private void PassRound()
     {

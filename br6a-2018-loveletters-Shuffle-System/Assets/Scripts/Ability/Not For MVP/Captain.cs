@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class Captain : Card {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public override void Ability(Player Target)
+    {
+        gamemanager.PassTurn();
+    }
 }

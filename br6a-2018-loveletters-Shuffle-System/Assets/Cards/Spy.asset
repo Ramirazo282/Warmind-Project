@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Name: Spy
   m_EditorClassIdentifier: 
   powerLevel: 2
+  parameterType: 1
   Name: Spy
   description: Look at another player's hand
+  hasBeenThrown: 0
   artwork: {fileID: 0}
+  gamemanager: {fileID: 0}

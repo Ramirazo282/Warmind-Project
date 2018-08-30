@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Adviser : Card
 {
-
+    public override void Ability()
+    {
+        gamemanager.PassTurn();
+    }
 }
