@@ -37,11 +37,15 @@ public class Gamemanager : MonoBehaviour {
     void Update()
     {
         playersInGame[playerTurnNumber].isPlayersTurn = true;
+        if (!playersInGame[playerTurnNumber].hasSecondCard)
+        {
+            cardListing.GetCard(playerTurnNumber);
+        }
         CheckDeath();
 
         if (Input.GetKeyDown(KeyCode.G) && !playersInGame[playerTurnNumber].hasSecondCard)
         {
-            cardListing.GetCard(playerTurnNumber);
+            
             if(playersInGame[playerTurnNumber] is AI)
             {
                 playersInGame[playerTurnNumber].Turn();
