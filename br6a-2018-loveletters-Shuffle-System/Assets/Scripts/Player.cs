@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    public Transform[] cardsWaypoints;
-
-    // public GameObject firstCard, secondCard;
-    public Card first, second;
+    [Header("Card Location")]
+    public Transform cardEndWaypoint, start1Location, start2Location;
+    
+    [Header("Card Lists")]
     public List<Card> infoOnHand;
     public List<GameObject> cardsOnHand;
 
@@ -69,15 +69,19 @@ public class Player : MonoBehaviour {
 
     public void SpawnCard()
     {
-        //STUFF
+        
     }
     public void ThrowCard(GameObject goCard, int i)
     {
         if (goCard != null)
         {
             Debug.Log("You have thrown " + goCard.name);
+
+            GameObject card = Instantiate(goCard, cardEndWaypoint);
+
             gamemanager.cardHistory.Add(goCard);
             RemoveCard(i);
+
             isPlayersTurn = false;
             gamemanager.PassTurn();
 
@@ -98,11 +102,12 @@ public class Player : MonoBehaviour {
         cardsOnHand.RemoveAt(c);
         infoOnHand.RemoveAt(c);
     }
+    //Future Imolement
     private void Movement(GameObject goCard)
     {
       float step = movementSpeed * Time.deltaTime;
-      goCard.transform.position = Vector3.MoveTowards(transform.position, cardsWaypoints[2].transform.position, step);
-      if (goCard.transform.position == cardsWaypoints[2].transform.position)
+      goCard.transform.position = Vector3.MoveTowards(transform.position, start1Location.transform.position, step);
+      if (goCard.transform.position == start2Location.transform.position)
            movecard = false;
     }
 
