@@ -45,9 +45,9 @@ public class Player : MonoBehaviour {
     void Update()
     {
         if (cardsOnHand.Count >= 2)
-        {
             hasSecondCard = true;
-        }
+        else
+            hasSecondCard = false;
         if (isPlayersTurn)
         {
            
